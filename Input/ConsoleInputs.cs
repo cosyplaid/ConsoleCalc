@@ -11,16 +11,6 @@ namespace ConsoleCalc.Input
             this.calc = calc;
             Program.stateUpdate = Update;
         }
-        public void InitText()
-        {
-            Console.WriteLine("\n--------- КОНСОЛЬНЫЙ КАЛЬКУЛЯТОР ---------\n");
-            Console.WriteLine("/start - начать");
-            Console.WriteLine("/stop - закончить");
-            Console.WriteLine("/cancel, /start - отменить операцию");
-            Console.WriteLine("/clear - очистить консоль");
-            Console.WriteLine("/settings - настройки; /back, /cancel - выход из настроек");
-            Console.WriteLine("/exit - закрыть приложение\n");
-        }
 
         private void Update()
         {
@@ -29,7 +19,7 @@ namespace ConsoleCalc.Input
             if (Program.CurrentState == States.Start)
             {
                 Console.Clear();
-                InitText();
+                CommonText.ShowInitText();
             }
 
             if (Program.CurrentState == States.Settings)
@@ -136,7 +126,7 @@ namespace ConsoleCalc.Input
                     Program.CurrentState = States.Settings;
                     return true;
                 case "/help":
-                    InitText();
+                    CommonText.ShowInitText();
                     Update();
                     return true;
                 case "/exit":

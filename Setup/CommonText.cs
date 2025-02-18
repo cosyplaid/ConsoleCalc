@@ -8,6 +8,16 @@ namespace ConsoleCalc.Setup
 {
     static class CommonText
     {
+        public static void ShowInitText()
+        {
+            Console.WriteLine("\n--------- КОНСОЛЬНЫЙ КАЛЬКУЛЯТОР ---------\n");
+            Console.WriteLine("/start - начать");
+            Console.WriteLine("/stop - закончить");
+            Console.WriteLine("/cancel, /start - отменить операцию");
+            Console.WriteLine("/clear - очистить консоль");
+            Console.WriteLine("/settings - настройки; /back, /cancel - выход из настроек");
+            Console.WriteLine("/exit - закрыть приложение\n");
+        }
         public static void ShowErrorMessage(string text)
         {
             Console.ForegroundColor = ConsoleColor.Red;

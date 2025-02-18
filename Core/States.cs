@@ -1,6 +1,5 @@
 ﻿enum States
 {
-    NotInit,
     Start,
     WaitForFisrtOperator,
     WaitForOperationSign,

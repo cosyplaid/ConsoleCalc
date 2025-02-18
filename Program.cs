@@ -6,7 +6,7 @@ namespace ConsoleCalc
     internal class Program
     {
         protected static States currentState;
-        protected static States lastState = States.NotInit;
+        protected static States lastState = States.Start;
         public static Action? stateUpdate;
         public static States CurrentState
         {

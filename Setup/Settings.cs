@@ -12,8 +12,6 @@ namespace ConsoleCalc.Setup
 
         public static ConsoleColor DefaultColor { get { return _defaultColor; } }
 
-        //check commit
-
         public static void SetNewColor(string color)
         {
             switch (color)

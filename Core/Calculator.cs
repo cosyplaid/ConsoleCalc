@@ -88,39 +88,18 @@ namespace ConsoleCalc.Core
             }
         }
 
-        //private bool TryParseOperation(string str, out Operation? operation)
-        //{
-        //    switch (str)
-        //    {
-        //        case "+":
-        //            operation = Add;
-        //            break;
-        //        case "-":
-        //            operation = Substract;
-        //            break;
-        //        case "*":
-        //            operation = Multiply;
-        //            break;
-        //        case "/":
-        //            operation = Divide;
-        //            break;
-        //        case "^":
-        //            operation = Pow;
-        //            break;
-        //        default:
-        //            CommonText.ShowErrorMessage("Неопознанный символ!");
-        //            operation = null;
-        //            return false;
-        //    }
-
-        //    return true;
-        //}
-
         public void ProceedOperation()
         {
             if (operation != null)
                 Result = operation(Operator1, Operator2);
 
+            ShowResultText();
+
+            Program.CurrentState = States.WaitForFisrtOperator;
+        }
+
+        private void ShowResultText()
+        {
             //Console.Clear(); __________________________________
             Console.WriteLine("----------------------------------\nX = {0}\nY = {1}\n----------------------------------", Operator1, Operator2);
 
@@ -128,8 +107,6 @@ namespace ConsoleCalc.Core
             Console.WriteLine("Результат: {0} {1} {2} = {3}", CommonText.GetFormatedOperator(Operator1), OperationSign, CommonText.GetFormatedOperator(Operator2), Result);
             Console.ForegroundColor = Settings.DefaultColor;
             Console.WriteLine("==================================\n");
-
-            Program.CurrentState = States.WaitForFisrtOperator;
         }
     }
 }
