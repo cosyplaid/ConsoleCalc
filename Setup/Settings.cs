@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ConsoleCalc.Setup
 {
-    static internal class Settings
+    internal static class Settings
     {
-        private static ConsoleColor _defaultColor = ConsoleColor.White;
+        static ConsoleColor _defaultColor = ConsoleColor.White;
 
         public static ConsoleColor DefaultColor { get { return _defaultColor; } }
 

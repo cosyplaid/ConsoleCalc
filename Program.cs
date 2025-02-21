@@ -5,8 +5,7 @@ namespace ConsoleCalc
 {
     internal class Program
     {
-        protected static States currentState;
-        protected static States lastState = States.Start;
+        static States currentState;
         public static Action? stateUpdate;
         public static States CurrentState
         {
@@ -18,11 +17,7 @@ namespace ConsoleCalc
             }
         }
 
-        public static States LastState
-        {
-            get { return lastState; }
-            set { lastState = value; }
-        }
+        public static States LastState {get; set;} = States.Start;
 
 
         static void Main(string[] args)

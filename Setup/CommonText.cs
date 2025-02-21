@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleCalc.Setup
 {
-    static class CommonText
+    internal static class CommonText
     {
         public static void ShowInitText()
         {

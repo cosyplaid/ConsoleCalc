@@ -3,35 +3,15 @@
 namespace ConsoleCalc.Core
 {
     delegate double Operation(double x, double y);
-    public class Calculator
+    internal class Calculator
     {
-        private double _operator1;
-        private double _operator2;
-        private string? _operationSign;
-        private double _result;
-
         private Operation? operation;
 
-        public double Operator1
-        {
-            get { return _operator1; }
-            private set { _operator1 = value; }
-        }
-        public double Operator2
-        {
-            get { return _operator2; }
-            private set { _operator2 = value; }
-        }
-        public string? OperationSign
-        {
-            get { return _operationSign; }
-            private set { _operationSign = value; }
-        }
-        public double Result
-        {
-            get { return _result; }
-            private set { _result = value; }
-        }
+        public double Operator1 { get; private set; }
+        public double Operator2 { get; private set; }
+        public string? OperationSign { get; private set; }
+
+        public double Result { get; private set; }
 
         public void InputOperator(string str)
         {
